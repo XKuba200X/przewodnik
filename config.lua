@@ -1,6 +1,5 @@
 
 Config 						= {}
-Config.Locale 				= 'en'
 
 -- Job NPC (Mission Provider):
 Config.JobNPC = {{
