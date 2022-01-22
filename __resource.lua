@@ -4,12 +4,10 @@ version '1.0.0'
 
 client_scripts {
 	'main.lua',
-	'locales/en.lua',
 	'config.lua'
 }
 
 server_scripts {
 	'config.lua',
-	'locales/en.lua',
 	'server.lua'
 }
