@@ -60,12 +60,12 @@ Citizen.CreateThread(function()
 		
 		if IsControlJustReleased(0, Keys['E']) and inCipa then
 			ESX.UI.Menu.CloseAll()
-			OpenPrzewoMenu()
+			OpenMenu()
 		end
 	end
 end)
   
-function OpenPrzewoMenu()
+function OpenMenu()
   
     local elements = {
         {label = 'Urzad Pracy',     value = 'l1'},
