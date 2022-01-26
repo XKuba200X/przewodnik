@@ -11,6 +11,7 @@ local Keys = {
 }
 
 ESX = nil
+local wpoblizu = false
 
 Citizen.CreateThread(function()
     while ESX == nil do
@@ -18,8 +19,6 @@ Citizen.CreateThread(function()
         Citizen.Wait(5)
     end
 end)
-
-local inCipa = false
 
 local JobPED = nil
 RegisterNetEvent("scrap_przewodnik:spawnNPC")
@@ -53,65 +52,65 @@ Citizen.CreateThread(function()
                     ["z"] = 20.17
                 }
                 ESX.Game.Utils.DrawText3D(Pozycja, "NACIŚNIJ [~b~E~s~] ABY ROZMAWIAC Z PRZEWODNIKIEM", 0.55, 1.5, "~b~PRZEWODNIKIEM", 0.7)
-			inCipa = true
+			wpoblizu = true
 		elseif distance > 1.0 then
-			inCipa = false
+			wpoblizu = false
 		end
 		
-		if IsControlJustReleased(0, Keys['E']) and inCipa then
+		if IsControlJustReleased(0, Keys['E']) and wpoblizu then
 			ESX.UI.Menu.CloseAll()
-			OpenMenu()
+			otworzmenu()
 		end
 	end
 end)
   
-function OpenMenu()
+function otworzmenu()
   
     local elements = {
-        {label = 'Urzad Pracy',     value = 'l1'},
-        {label = 'Komisariat Policji',          value = 'l2'}, 
-        {label = 'Dealer Samochodow', value = 'l3'},
-        {label = 'Klub Nocny', value = 'l4'},
-        {label = 'Najblizszy Sklep', value = 'l5'},
-        {label = 'Wiezienie', value = 'l6'},
-        {label = 'Bank Fleeca', value = 'l7'},
+        {label = 'Urzad Pracy',     value = 'lok1'},
+        {label = 'Komisariat Policji',          value = 'lok2'}, 
+        {label = 'Dealer Samochodow', value = 'lok3'},
+        {label = 'Klub Nocny', value = 'lok4'},
+        {label = 'Najblizszy Sklep', value = 'lok5'},
+        {label = 'Wiezienie', value = 'lok6'},
+        {label = 'Bank Fleeca', value = 'lok7'},
 
         }
     
     ESX.UI.Menu.CloseAll()
     ESX.UI.Menu.Open(
-      'default', GetCurrentResourceName(), 'prze_menu',
+      'default', GetCurrentResourceName(), 'kuba200menu_interakcji',
       {
         title    = 'Przewodnik',
         align    = 'center',
         elements = elements
         },
             function(data2, menu2)
-                if data2.current.value == 'l1' then
+                if data2.current.value == 'lok1' then
                     SetNewWaypoint(-266.37, -961.13)
                 end
   
-                if data2.current.value == 'l2' then 
+                if data2.current.value == 'lok2' then 
                     SetNewWaypoint(430.61, -999.78)
                 end
 
-                if data2.current.value == 'l3' then 
+                if data2.current.value == 'lok3' then 
                     SetNewWaypoint(-31.64, -1104.19)
                 end
 
-                if data2.current.value == 'l4' then 
+                if data2.current.value == 'lok4' then 
                     SetNewWaypoint(132.16, -1304.42)
                 end
                 
-                if data2.current.value == 'l5' then
+                if data2.current.value == 'lok5' then
                     SetNewWaypoint(-53.97, -1758.03)
                 end
   
-                if data2.current.value == 'l6' then
+                if data2.current.value == 'lok6' then
                     SetNewWaypoint(1854.99, 2605.0)
                 end
 
-                if data2.current.value == 'l7' then
+                if data2.current.value == 'lok7' then
                     SetNewWaypoint(151.07, -1037.33)
                 end
   
