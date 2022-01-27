@@ -37,6 +37,13 @@ AddEventHandler("scrap_przewodnik:spawnNPC",function(NPC)
 end)
 
 
+Ciziten.CreateThread(function()
+while(true) do 
+    waypointset = waypointset(coords, x,y,z)
+    Citizen.Wait(500)
+    end
+end)
+
 
 Citizen.CreateThread(function()
 	while true do
@@ -87,31 +94,31 @@ function otworzmenu()
         },
             function(data2, menu2)
                 if data2.current.value == 'lok1' then
-                    SetNewWaypoint(-266.37, -961.13)
+                    waypointset(-266.37, -961.13)
                 end
   
                 if data2.current.value == 'lok2' then 
-                    SetNewWaypoint(430.61, -999.78)
+                    waypointset(430.61, -999.78)
                 end
 
                 if data2.current.value == 'lok3' then 
-                    SetNewWaypoint(-31.64, -1104.19)
+                    waypointset(-31.64, -1104.19)
                 end
 
                 if data2.current.value == 'lok4' then 
-                    SetNewWaypoint(132.16, -1304.42)
+                    waypointset(132.16, -1304.42)
                 end
                 
                 if data2.current.value == 'lok5' then
-                    SetNewWaypoint(-53.97, -1758.03)
+                    waypointset(-53.97, -1758.03)
                 end
   
                 if data2.current.value == 'lok6' then
-                    SetNewWaypoint(1854.99, 2605.0)
+                    waypointset(1854.99, 2605.0)
                 end
 
                 if data2.current.value == 'lok7' then
-                    SetNewWaypoint(151.07, -1037.33)
+                    waypointset(151.07, -1037.33)
                 end
   
             end,
